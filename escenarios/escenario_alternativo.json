@@ -1,0 +1,349 @@
+{
+  "esquema": "sipotda.escenario/1",
+  "id": "corredor_costero",
+  "nombre": "Corredor costero alternativo",
+  "filas": 12,
+  "columnas": 12,
+  "inicio": [
+    11,
+    0
+  ],
+  "destino": [
+    0,
+    11
+  ],
+  "entregas": [
+    {
+      "id": 1,
+      "nombre": "Terminal Pesquero",
+      "fila": 9,
+      "columna": 3,
+      "demanda": 4.0,
+      "tarifa": 55.0,
+      "prioridad": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Plaza Mayor",
+      "fila": 6,
+      "columna": 8,
+      "demanda": 5.0,
+      "tarifa": 55.0,
+      "prioridad": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Aduana Norte",
+      "fila": 3,
+      "columna": 2,
+      "demanda": 3.0,
+      "tarifa": 55.0,
+      "prioridad": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Muelle viejo",
+      "fila": 1,
+      "columna": 9,
+      "demanda": 4.0,
+      "tarifa": 55.0,
+      "prioridad": 1
+    }
+  ],
+  "obstaculos": [
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      2,
+      10
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      9
+    ],
+    [
+      10,
+      9
+    ]
+  ],
+  "recursos": {
+    "combustible": {
+      "nombre": "combustible",
+      "cantidad": 220.0,
+      "unidad": "unidades",
+      "consumo_por_paso": 1.0,
+      "descripcion": ""
+    },
+    "capacidad": {
+      "nombre": "capacidad",
+      "cantidad": 25.0,
+      "unidad": "unidades",
+      "consumo_por_paso": 0.0,
+      "descripcion": ""
+    },
+    "tiempo": {
+      "nombre": "tiempo",
+      "cantidad": 260.0,
+      "unidad": "pasos",
+      "consumo_por_paso": 1.0,
+      "descripcion": ""
+    },
+    "presupuesto": {
+      "nombre": "presupuesto",
+      "cantidad": 340.0,
+      "unidad": "monetarias",
+      "consumo_por_paso": 0.0,
+      "descripcion": ""
+    }
+  },
+  "competidor": {
+    "nombre": "RutaSur",
+    "factor_costo": 1.2,
+    "factor_presupuesto": 1.1,
+    "celdas_bloqueadas": [
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "descripcion": "Competidor con presencia en el corredor central y muelles."
+  },
+  "restricciones": {
+    "permitir_diagonal": false,
+    "factor_costo_diagonal": 1.414213562,
+    "profundidad_adversaria": 4
+  },
+  "tarifa_por_unidad": 55.0,
+  "meta": {
+    "autor": "Proyecto SIPOTDA",
+    "notas": "Escenario alternativo con inicio y destino invertidos."
+  },
+  "costos": [
+    [
+      0.6,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.6,
+      1.0,
+      1.0,
+      1.0,
+      2.0,
+      2.0,
+      2.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.6,
+      1.0,
+      1.0,
+      1.0,
+      2.0,
+      2.0,
+      2.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.6,
+      1.0,
+      1.0,
+      1.0,
+      2.0,
+      2.0,
+      2.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      2.0,
+      2.0,
+      2.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      1.0,
+      1.0,
+      2.8,
+      2.8,
+      2.8,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.6,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      2.8,
+      2.8,
+      2.8,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.6,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      2.8,
+      2.8,
+      2.8,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.6,
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      2.8,
+      2.8,
+      2.8,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.6,
+      0.5,
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6
+    ]
+  ]
+}

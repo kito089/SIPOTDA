@@ -1,0 +1,307 @@
+{
+  "esquema": "sipotda.escenario/1",
+  "id": "bloqueado",
+  "nombre": "Escenario sin solución (demostración)",
+  "filas": 12,
+  "columnas": 12,
+  "inicio": [
+    0,
+    0
+  ],
+  "destino": [
+    11,
+    11
+  ],
+  "entregas": [
+    {
+      "id": 1,
+      "nombre": "E1",
+      "fila": 1,
+      "columna": 5,
+      "demanda": 2.0,
+      "tarifa": 60.0,
+      "prioridad": 1
+    },
+    {
+      "id": 2,
+      "nombre": "E2",
+      "fila": 5,
+      "columna": 5,
+      "demanda": 2.0,
+      "tarifa": 60.0,
+      "prioridad": 1
+    },
+    {
+      "id": 3,
+      "nombre": "E3",
+      "fila": 9,
+      "columna": 5,
+      "demanda": 2.0,
+      "tarifa": 60.0,
+      "prioridad": 1
+    }
+  ],
+  "obstaculos": [
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      6,
+      10
+    ],
+    [
+      6,
+      11
+    ]
+  ],
+  "recursos": {
+    "combustible": {
+      "nombre": "combustible",
+      "cantidad": 200.0,
+      "unidad": "unidades",
+      "consumo_por_paso": 1.0,
+      "descripcion": ""
+    },
+    "capacidad": {
+      "nombre": "capacidad",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "consumo_por_paso": 0.0,
+      "descripcion": ""
+    },
+    "tiempo": {
+      "nombre": "tiempo",
+      "cantidad": 200.0,
+      "unidad": "pasos",
+      "consumo_por_paso": 1.0,
+      "descripcion": ""
+    },
+    "presupuesto": {
+      "nombre": "presupuesto",
+      "cantidad": 300.0,
+      "unidad": "monetarias",
+      "consumo_por_paso": 0.0,
+      "descripcion": ""
+    }
+  },
+  "competidor": {
+    "nombre": "BloqueoTotal",
+    "factor_costo": 1.0,
+    "factor_presupuesto": 1.0,
+    "celdas_bloqueadas": [],
+    "descripcion": "Muro completo"
+  },
+  "restricciones": {
+    "permitir_diagonal": false,
+    "factor_costo_diagonal": 1.414213562
+  },
+  "tarifa_por_unidad": 60.0,
+  "meta": {},
+  "costos": [
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  ]
+}

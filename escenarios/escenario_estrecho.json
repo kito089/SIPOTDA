@@ -1,0 +1,341 @@
+{
+  "esquema": "sipotda.escenario/1",
+  "id": "pasillo_estrecho",
+  "nombre": "Pasillo urbano estrecho",
+  "filas": 12,
+  "columnas": 12,
+  "inicio": [
+    0,
+    11
+  ],
+  "destino": [
+    11,
+    0
+  ],
+  "entregas": [
+    {
+      "id": 1,
+      "nombre": "Farmacia Este",
+      "fila": 2,
+      "columna": 8,
+      "demanda": 3.0,
+      "tarifa": 70.0,
+      "prioridad": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Taller Central",
+      "fila": 5,
+      "columna": 5,
+      "demanda": 4.0,
+      "tarifa": 70.0,
+      "prioridad": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Bodega Oeste",
+      "fila": 8,
+      "columna": 3,
+      "demanda": 3.0,
+      "tarifa": 70.0,
+      "prioridad": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Clínica Sur",
+      "fila": 10,
+      "columna": 7,
+      "demanda": 5.0,
+      "tarifa": 70.0,
+      "prioridad": 1
+    }
+  ],
+  "obstaculos": [
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      5,
+      10
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      4
+    ]
+  ],
+  "recursos": {
+    "combustible": {
+      "nombre": "combustible",
+      "cantidad": 180.0,
+      "unidad": "unidades",
+      "consumo_por_paso": 1.0,
+      "descripcion": ""
+    },
+    "capacidad": {
+      "nombre": "capacidad",
+      "cantidad": 22.0,
+      "unidad": "unidades",
+      "consumo_por_paso": 0.0,
+      "descripcion": ""
+    },
+    "tiempo": {
+      "nombre": "tiempo",
+      "cantidad": 220.0,
+      "unidad": "pasos",
+      "consumo_por_paso": 1.0,
+      "descripcion": ""
+    },
+    "presupuesto": {
+      "nombre": "presupuesto",
+      "cantidad": 280.0,
+      "unidad": "monetarias",
+      "consumo_por_paso": 0.0,
+      "descripcion": ""
+    }
+  },
+  "competidor": {
+    "nombre": "LogiNorte",
+    "factor_costo": 1.3,
+    "factor_presupuesto": 1.2,
+    "celdas_bloqueadas": [
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        7
+      ]
+    ],
+    "descripcion": "Competidor que ocupa rutas del pasillo central."
+  },
+  "restricciones": {
+    "permitir_diagonal": false,
+    "factor_costo_diagonal": 1.414213562,
+    "profundidad_adversaria": 4
+  },
+  "tarifa_por_unidad": 70.0,
+  "meta": {
+    "autor": "Proyecto SIPOTDA",
+    "notas": "Escenario de recursos ajustados y pasillo estrecho."
+  },
+  "costos": [
+    [
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5,
+      0.8
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      1.0,
+      1.0,
+      0.5,
+      0.8
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      1.0,
+      1.0,
+      1.0,
+      0.8
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      1.0,
+      1.0,
+      1.0,
+      0.8
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      1.0,
+      1.0,
+      1.0,
+      0.8
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      1.0,
+      1.0,
+      1.0,
+      0.8
+    ],
+    [
+      1.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      2.4,
+      2.4,
+      1.0,
+      1.0,
+      1.0,
+      0.8
+    ],
+    [
+      1.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      2.4,
+      2.4,
+      1.0,
+      1.0,
+      1.0,
+      0.8
+    ],
+    [
+      1.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.8
+    ],
+    [
+      1.0,
+      0.5,
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.8
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.8
+    ]
+  ]
+}

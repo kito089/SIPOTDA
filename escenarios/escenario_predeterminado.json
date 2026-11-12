@@ -1,0 +1,346 @@
+{
+  "esquema": "sipotda.escenario/1",
+  "id": "logistica_12x12",
+  "nombre": "Red metropolitana base",
+  "filas": 12,
+  "columnas": 12,
+  "inicio": [
+    0,
+    0
+  ],
+  "destino": [
+    11,
+    11
+  ],
+  "entregas": [
+    {
+      "id": 1,
+      "nombre": "Centro Norte",
+      "fila": 2,
+      "columna": 9,
+      "demanda": 5.0,
+      "tarifa": 60.0,
+      "prioridad": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Zona Industrial",
+      "fila": 5,
+      "columna": 4,
+      "demanda": 4.0,
+      "tarifa": 60.0,
+      "prioridad": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Puerto Este",
+      "fila": 8,
+      "columna": 10,
+      "demanda": 6.0,
+      "tarifa": 60.0,
+      "prioridad": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Depósito Sur",
+      "fila": 10,
+      "columna": 2,
+      "demanda": 3.0,
+      "tarifa": 60.0,
+      "prioridad": 1
+    },
+    {
+      "id": 5,
+      "nombre": "Mercado Central",
+      "fila": 4,
+      "columna": 7,
+      "demanda": 4.0,
+      "tarifa": 60.0,
+      "prioridad": 1
+    }
+  ],
+  "obstaculos": [
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      11
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      11
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      5,
+      10
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      10,
+      6
+    ]
+  ],
+  "recursos": {
+    "combustible": {
+      "nombre": "combustible",
+      "cantidad": 250.0,
+      "unidad": "unidades",
+      "consumo_por_paso": 1.0,
+      "descripcion": ""
+    },
+    "capacidad": {
+      "nombre": "capacidad",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "consumo_por_paso": 0.0,
+      "descripcion": ""
+    },
+    "tiempo": {
+      "nombre": "tiempo",
+      "cantidad": 300.0,
+      "unidad": "pasos",
+      "consumo_por_paso": 1.0,
+      "descripcion": ""
+    },
+    "presupuesto": {
+      "nombre": "presupuesto",
+      "cantidad": 400.0,
+      "unidad": "monetarias",
+      "consumo_por_paso": 0.0,
+      "descripcion": ""
+    }
+  },
+  "competidor": {
+    "nombre": "TransLog",
+    "factor_costo": 1.25,
+    "factor_presupuesto": 1.15,
+    "celdas_bloqueadas": [
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "descripcion": "Competidor que compite por combustible y rutas del corredor central."
+  },
+  "restricciones": {
+    "permitir_diagonal": false,
+    "factor_costo_diagonal": 1.414213562,
+    "profundidad_adversaria": 4
+  },
+  "tarifa_por_unidad": 60.0,
+  "meta": {
+    "autor": "Proyecto SIPOTDA",
+    "notas": "Escenario base de 12x12 con cinco entregas."
+  },
+  "costos": [
+    [
+      0.7,
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.7,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.7,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.7,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.7,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.7,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      2.5,
+      2.5,
+      2.5,
+      1.0,
+      1.0
+    ],
+    [
+      0.7,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      2.5,
+      2.5,
+      2.5,
+      1.0,
+      1.0
+    ],
+    [
+      0.7,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      2.5,
+      2.5,
+      2.5,
+      1.0,
+      1.0
+    ],
+    [
+      1.5,
+      1.5,
+      1.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.5,
+      1.5,
+      1.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.7,
+      0.7,
+      0.7,
+      0.7,
+      0.7,
+      0.7,
+      0.7,
+      0.7,
+      0.7,
+      0.7,
+      0.7,
+      0.7
+    ]
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "escenario_id": "nuevo_escenario",
+  "nombre_escenario": "Nuevo escenario",
+  "estrategias_empresa": [
+    "ahorro_recursos",
+    "ruta_rapida",
+    "ruta_alternativa"
+  ],
+  "estrategias_competidor": [
+    "mantener_disponibilidad",
+    "encarecer_combustible",
+    "bloquear_ruta"
+  ],
+  "matriz": [
+    {
+      "empresa": "ahorro_recursos",
+      "competidor": "mantener_disponibilidad",
+      "pago_empresa": 517.4,
+      "pago_competidor": 145.2,
+      "detalle": {
+        "descripcion_empresa": "Prioriza bajo consumo y costo controlado.",
+        "descripcion_competidor": "No altera costos ni rutas.",
+        "ingreso": 660.0,
+        "costo_ruta": 121.0,
+        "costo_efectivo": 121.0,
+        "factor_costo_competidor": 1.0,
+        "factor_presupuesto_competidor": 1.0,
+        "costo_base": 121.0,
+        "combustible_efectivo": 18.7,
+        "tiempo_efectivo": 24.2,
+        "riesgo": 0.18,
+        "penalizacion": 21.6,
+        "margen_competidor": 145.2,
+        "captura_competidor": 0.0,
+        "bono_bloqueo": 0.0,
+        "solucion_valida": true,
+        "violaciones": [],
+        "orden_entregas": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "evitar": [],
+        "modo_ruta": "costo"
+      }
+    },
+    {
+      "empresa": "ahorro_recursos",
+      "competidor": "encarecer_combustible",
+      "pago_empresa": 510.2,
+      "pago_competidor": 120.2,
+      "detalle": {
+        "descripcion_empresa": "Prioriza bajo consumo y costo controlado.",
+        "descripcion_competidor": "Incrementa el costo del combustible y del presupuesto.",
+        "ingreso": 660.0,
+        "costo_ruta": 121.0,
+        "costo_efectivo": 121.0,
+        "factor_costo_competidor": 1.0,
+        "factor_presupuesto_competidor": 1.0,
+        "costo_base": 121.0,
+        "combustible_efectivo": 18.7,
+        "tiempo_efectivo": 24.2,
+        "riesgo": 0.24,
+        "penalizacion": 28.8,
+        "margen_competidor": 145.2,
+        "captura_competidor": 0.0,
+        "bono_bloqueo": 0.0,
+        "solucion_valida": true,
+        "violaciones": [],
+        "orden_entregas": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "evitar": [],
+        "modo_ruta": "costo"
+      }
+    },
+    {
+      "empresa": "ahorro_recursos",
+      "competidor": "bloquear_ruta",
+      "pago_empresa": 495.72,
+      "pago_competidor": 124.556,
+      "detalle": {
+        "descripcion_empresa": "Prioriza bajo consumo y costo controlado.",
+        "descripcion_competidor": "Reserva/ocupa celdas compartidas para forzar un desvío.",
+        "ingreso": 660.0,
+        "costo_ruta": 121.0,
+        "costo_efectivo": 130.68,
+        "factor_costo_competidor": 1.08,
+        "factor_presupuesto_competidor": 1.0,
+        "costo_base": 121.0,
+        "combustible_efectivo": 18.7,
+        "tiempo_efectivo": 24.2,
+        "riesgo": 0.28,
+        "penalizacion": 33.6,
+        "margen_competidor": 145.2,
+        "captura_competidor": 4.356,
+        "bono_bloqueo": 0.0,
+        "solucion_valida": true,
+        "violaciones": [],
+        "orden_entregas": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "evitar": [],
+        "modo_ruta": "costo"
+      }
+    },
+    {
+      "empresa": "ruta_rapida",
+      "competidor": "mantener_disponibilidad",
+      "pago_empresa": 506.45,
+      "pago_competidor": 153.3675,
+      "detalle": {
+        "descripcion_empresa": "Minimiza el número de pasos; asume mayor gasto energético.",
+        "descripcion_competidor": "No altera costos ni rutas.",
+        "ingreso": 660.0,
+        "costo_ruta": 121.0,
+        "costo_efectivo": 139.15,
+        "factor_costo_competidor": 1.0,
+        "factor_presupuesto_competidor": 1.0,
+        "costo_base": 121.0,
+        "combustible_efectivo": 24.2,
+        "tiempo_efectivo": 18.7,
+        "riesgo": 0.12,
+        "penalizacion": 14.4,
+        "margen_competidor": 145.2,
+        "captura_competidor": 8.1675,
+        "bono_bloqueo": 0.0,
+        "solucion_valida": true,
+        "violaciones": [],
+        "orden_entregas": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "evitar": [],
+        "modo_ruta": "pasos"
+      }
+    },
+    {
+      "empresa": "ruta_rapida",
+      "competidor": "encarecer_combustible",
+      "pago_empresa": 499.25,
+      "pago_competidor": 128.3675,
+      "detalle": {
+        "descripcion_empresa": "Minimiza el número de pasos; asume mayor gasto energético.",
+        "descripcion_competidor": "Incrementa el costo del combustible y del presupuesto.",
+        "ingreso": 660.0,
+        "costo_ruta": 121.0,
+        "costo_efectivo": 139.15,
+        "factor_costo_competidor": 1.0,
+        "factor_presupuesto_competidor": 1.0,
+        "costo_base": 121.0,
+        "combustible_efectivo": 24.2,
+        "tiempo_efectivo": 18.7,
+        "riesgo": 0.18,
+        "penalizacion": 21.6,
+        "margen_competidor": 145.2,
+        "captura_competidor": 8.1675,
+        "bono_bloqueo": 0.0,
+        "solucion_valida": true,
+        "violaciones": [],
+        "orden_entregas": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "evitar": [],
+        "modo_ruta": "pasos"
+      }
+    },
+    {
+      "empresa": "ruta_rapida",
+      "competidor": "bloquear_ruta",
+      "pago_empresa": 483.318,
+      "pago_competidor": 133.3769,
+      "detalle": {
+        "descripcion_empresa": "Minimiza el número de pasos; asume mayor gasto energético.",
+        "descripcion_competidor": "Reserva/ocupa celdas compartidas para forzar un desvío.",
+        "ingreso": 660.0,
+        "costo_ruta": 121.0,
+        "costo_efectivo": 150.282,
+        "factor_costo_competidor": 1.08,
+        "factor_presupuesto_competidor": 1.0,
+        "costo_base": 121.0,
+        "combustible_efectivo": 24.2,
+        "tiempo_efectivo": 18.7,
+        "riesgo": 0.22,
+        "penalizacion": 26.4,
+        "margen_competidor": 145.2,
+        "captura_competidor": 13.1769,
+        "bono_bloqueo": 0.0,
+        "solucion_valida": true,
+        "violaciones": [],
+        "orden_entregas": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "evitar": [],
+        "modo_ruta": "pasos"
+      }
+    },
+    {
+      "empresa": "ruta_alternativa",
+      "competidor": "mantener_disponibilidad",
+      "pago_empresa": 520.5975,
+      "pago_competidor": 150.7811,
+      "detalle": {
+        "descripcion_empresa": "Evita celdas bloqueadas por el competidor y reduce riesgo.",
+        "descripcion_competidor": "No altera costos ni rutas.",
+        "ingreso": 660.0,
+        "costo_ruta": 127.05,
+        "costo_efectivo": 133.4025,
+        "factor_costo_competidor": 1.0,
+        "factor_presupuesto_competidor": 1.0,
+        "costo_base": 121.0,
+        "combustible_efectivo": 22.0,
+        "tiempo_efectivo": 23.1,
+        "riesgo": 0.05,
+        "penalizacion": 6.0,
+        "margen_competidor": 145.2,
+        "captura_competidor": 5.5811,
+        "bono_bloqueo": 0.0,
+        "solucion_valida": true,
+        "violaciones": [],
+        "orden_entregas": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "evitar": [],
+        "modo_ruta": "costo"
+      }
+    },
+    {
+      "empresa": "ruta_alternativa",
+      "competidor": "encarecer_combustible",
+      "pago_empresa": 513.3975,
+      "pago_competidor": 125.7811,
+      "detalle": {
+        "descripcion_empresa": "Evita celdas bloqueadas por el competidor y reduce riesgo.",
+        "descripcion_competidor": "Incrementa el costo del combustible y del presupuesto.",
+        "ingreso": 660.0,
+        "costo_ruta": 127.05,
+        "costo_efectivo": 133.4025,
+        "factor_costo_competidor": 1.0,
+        "factor_presupuesto_competidor": 1.0,
+        "costo_base": 121.0,
+        "combustible_efectivo": 22.0,
+        "tiempo_efectivo": 23.1,
+        "riesgo": 0.11,
+        "penalizacion": 13.2,
+        "margen_competidor": 145.2,
+        "captura_competidor": 5.5811,
+        "bono_bloqueo": 0.0,
+        "solucion_valida": true,
+        "violaciones": [],
+        "orden_entregas": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "evitar": [],
+        "modo_ruta": "costo"
+      }
+    },
+    {
+      "empresa": "ruta_alternativa",
+      "competidor": "bloquear_ruta",
+      "pago_empresa": 497.9253,
+      "pago_competidor": 130.5836,
+      "detalle": {
+        "descripcion_empresa": "Evita celdas bloqueadas por el competidor y reduce riesgo.",
+        "descripcion_competidor": "Reserva/ocupa celdas compartidas para forzar un desvío.",
+        "ingreso": 660.0,
+        "costo_ruta": 127.05,
+        "costo_efectivo": 144.0747,
+        "factor_costo_competidor": 1.08,
+        "factor_presupuesto_competidor": 1.0,
+        "costo_base": 121.0,
+        "combustible_efectivo": 22.0,
+        "tiempo_efectivo": 23.1,
+        "riesgo": 0.15,
+        "penalizacion": 18.0,
+        "margen_competidor": 145.2,
+        "captura_competidor": 10.3836,
+        "bono_bloqueo": 0.0,
+        "solucion_valida": true,
+        "violaciones": [],
+        "orden_entregas": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "evitar": [],
+        "modo_ruta": "costo"
+      }
+    }
+  ],
+  "analisis": {
+    "mejores_respuestas_empresa": {
+      "mantener_disponibilidad": [
+        "ruta_alternativa"
+      ],
+      "encarecer_combustible": [
+        "ruta_alternativa"
+      ],
+      "bloquear_ruta": [
+        "ruta_alternativa"
+      ]
+    },
+    "mejores_respuestas_competidor": {
+      "ahorro_recursos": [
+        "mantener_disponibilidad"
+      ],
+      "ruta_rapida": [
+        "mantener_disponibilidad"
+      ],
+      "ruta_alternativa": [
+        "mantener_disponibilidad"
+      ]
+    },
+    "dominantes_empresa": [
+      "ruta_alternativa"
+    ],
+    "dominadas_empresa": [
+      "ahorro_recursos",
+      "ruta_rapida"
+    ],
+    "debilmente_dominantes_empresa": [
+      "ruta_alternativa"
+    ],
+    "debilmente_dominadas_empresa": [
+      "ahorro_recursos",
+      "ruta_rapida"
+    ],
+    "dominantes_competidor": [
+      "mantener_disponibilidad"
+    ],
+    "dominadas_competidor": [
+      "encarecer_combustible",
+      "bloquear_ruta"
+    ],
+    "equilibrios_nash": [
+      [
+        "ruta_alternativa",
+        "mantener_disponibilidad"
+      ]
+    ],
+    "explicacion": "Los pagos de la empresa son ingreso menos costo efectivo y penalización por riesgo/recursos. Los del competidor combinan su margen de mercado, la captura por sobrecostos inducidos y bonos por bloqueo. Un par es Nash si ninguna de las dos partes mejora cambiando unilateralmente de estrategia."
+  },
+  "recomendacion": {
+    "estrategia_empresa": "ruta_alternativa",
+    "estrategia_competidor": "mantener_disponibilidad",
+    "pago_empresa": 520.5975,
+    "motivo": "Equilibrio de Nash puro con el mayor pago para la empresa.",
+    "tipo": "nash"
+  },
+  "metricas": {
+    "ingreso_base": 660.0,
+    "costo_base": 121.0,
+    "solucion_base_valida": true,
+    "formula_empresa": "ingreso - costo_efectivo - penalizacion",
+    "formula_competidor": "0.22*ingreso + 0.45*max(0,costo_efectivo-costo_base) + bono_bloqueo - castigo",
+    "num_celdas": 9
+  }
+}

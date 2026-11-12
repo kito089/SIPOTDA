@@ -1,0 +1,2 @@
+escenario,num_inicios,semilla_base,semillas,costo_promedio_inicial,costo_promedio_final,desviacion_final,mejor_costo,mejor_id_ejecucion,peor_costo,optimos_locales,resultados_validos,resultados_totales,ids_ejecucion,fecha,archivo
+logistica_12x12,2,2026,"[255808012, 686087736]",52.0,39.45,1.6500000000000021,37.8,Hill_Climbin-29bb2f540f,41.1,2,2,2,"['Hill_Climbin-438cbd329f', 'Hill_Climbin-29bb2f540f']",2026-11-12T08:27:37,C:\kito089\esc\SIPOTDA\resultados\csv\hill_climbing_logistica_12x12.csv

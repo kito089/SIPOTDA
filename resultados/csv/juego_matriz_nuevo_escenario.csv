@@ -1,0 +1,10 @@
+empresa,competidor,pago_empresa,pago_competidor,costo_efectivo,riesgo,evitar
+ahorro_recursos,mantener_disponibilidad,517.4,145.2,121.0,0.18,[]
+ahorro_recursos,encarecer_combustible,510.2,120.2,121.0,0.24,[]
+ahorro_recursos,bloquear_ruta,495.72,124.556,130.68,0.28,[]
+ruta_rapida,mantener_disponibilidad,506.45,153.3675,139.15,0.12,[]
+ruta_rapida,encarecer_combustible,499.25,128.3675,139.15,0.18,[]
+ruta_rapida,bloquear_ruta,483.318,133.3769,150.282,0.22,[]
+ruta_alternativa,mantener_disponibilidad,520.5975,150.7811,133.4025,0.05,[]
+ruta_alternativa,encarecer_combustible,513.3975,125.7811,133.4025,0.11,[]
+ruta_alternativa,bloquear_ruta,497.9253,130.5836,144.0747,0.15,[]

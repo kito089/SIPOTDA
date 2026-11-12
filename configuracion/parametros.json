@@ -1,0 +1,33 @@
+{
+  "hill_climbing": {
+    "max_iteraciones": 500,
+    "permitir_mesetas": false,
+    "max_mesetas": 20
+  },
+  "recocido_simulado": {
+    "temperatura_inicial": 50.0,
+    "temperatura_final": 0.01,
+    "enfriamiento": 0.95,
+    "iteraciones_por_temperatura": 15,
+    "max_iteraciones": 2500
+  },
+  "algoritmo_genetico": {
+    "tamano_poblacion": 30,
+    "generaciones": 80,
+    "prob_cruza": 0.85,
+    "prob_mutacion": 0.2,
+    "elitismo": 2,
+    "tamano_torneo": 3,
+    "max_evaluaciones": 15000
+  },
+  "experimentos": {
+    "repeticiones_metaheuristicas": 20,
+    "num_inicios_hill": 10,
+    "semilla_base": 2026,
+    "profundidades_adversarias": [
+      2,
+      4,
+      6
+    ]
+  }
+}
