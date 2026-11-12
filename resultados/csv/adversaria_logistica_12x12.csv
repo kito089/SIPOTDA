@@ -1,2 +1,4 @@
 profundidad,valor_minimax,valor_alfa_beta,diferencia,iguales,mejor_accion_minimax,mejor_accion_alfa_beta,nodos_minimax,nodos_alfa_beta,nodos_podados_alfa_beta,reduccion_nodos_pct,tiempo_minimax,tiempo_alfa_beta
-2,1264.234,1264.234,0.0,True,reservar_ruta,reservar_ruta,13,12,1,7.6923,6.8e-05,4.9e-05
+2,1264.234,1264.234,0.0,True,reservar_ruta,reservar_ruta,13,12,1,7.6923,9.8e-05,5.4e-05
+4,1257.59,1257.59,0.0,True,reservar_ruta,reservar_ruta,121,88,9,27.2727,0.000474,0.000343
+6,1250.946,1250.946,0.0,True,reservar_ruta,reservar_ruta,1093,623,74,43.0009,0.00391,0.002523

@@ -310,16 +310,80 @@ El esquema nominal es `sipotda.escenario/1`. Un ejemplo mínimo válido de la es
 
 La carga acepta un contenedor `{"escenario": {...}}` o el objeto de escenario en la raíz. `Escenario.desde_dict` exige `filas`, `columnas`, `inicio` y `destino`; después acepta `celdas` o `costos` (`modelos/escenario.py:603-683`).
 
-### 2.5 Escenarios incluidos
+### 2.5 Escenarios incluidos y caracterización técnica
 
-| Archivo | `id` | Inicio → destino | Entregas | Demanda total | Recursos (combustible/capacidad/tiempo/presupuesto) | Competidor | Obstáculos |
-|---|---|---|---:|---:|---|---|---:|
-| `escenario_predeterminado.json` | `logistica_12x12` | `(0,0) → (11,11)` | 5 | 22 | 250 / 30 / 300 / 400 | TransLog, 1.25 / 1.15 | 13 |
-| `escenario_alternativo.json` | `corredor_costero` | `(11,0) → (0,11)` | 4 | 16 | 220 / 25 / 260 / 340 | RutaSur, 1.20 / 1.10 | 16 |
-| `escenario_estrecho.json` | `pasillo_estrecho` | `(0,11) → (11,0)` | 4 | 15 | 180 / 22 / 220 / 280 | LogiNorte, 1.30 / 1.20 | 14 |
-| `escenario_bloqueado.json` | `bloqueado` | `(0,0) → (11,11)` | 3 | 6 | 200 / 10 / 200 / 300 | BloqueoTotal, 1.00 / 1.00 | 12 |
+El proyecto incluye cuatro configuraciones oficiales de escenarios en formato JSON ubicados en la carpeta `escenarios/`. Cada uno modela distintas condiciones topológicas, presiones competitivas y restricciones de recursos.
 
-`escenario_bloqueado.json` es inválido de forma deliberada: no existe una ruta transitable entre los puntos obligatorios. Se usa para comprobar que la carga y la validación rechazan escenarios sin solución. La tarifa del predeterminado es 60; la del alternativo, 55; la del estrecho, 70; la del bloqueado, 60.
+#### Tabla comparativa general de escenarios
+
+| Archivo | `id` interno | Nombre descriptivo | Tamaño | Inicio ($S$) → Destino ($G$) | Entregas (Demanda) | Recursos (Comb / Cap / Tmp / Pres) | Obstáculos | Competidor (Nombre, Costo / Presup.) | Celdas bloqueadas comp. | Tarifa base | Factibilidad / Propósito |
+|---|---|---|:---:|:---:|:---:|:---:|:---:|---|:---:|:---:|---|
+| `escenario_predeterminado.json` | `logistica_12x12` | Red metropolitana base | 12×12 | `(0,0) → (11,11)` | 5 (22.0) | 250.0 / 30.0 / 300.0 / 400.0 | 13 | TransLog (1.25 / 1.15) | 3 `[(7,8),(7,9),(8,8)]` | 60.0 | **Factible.** Escenario base de referencia. Óptimo global $37.8$. |
+| `escenario_alternativo.json` | `corredor_costero` | Corredor costero alternativo | 12×12 | `(11,0) → (0,11)` | 4 (16.0) | 220.0 / 25.0 / 260.0 / 340.0 | 16 | RutaSur (1.20 / 1.10) | 3 `[(4,5),(4,6),(5,5)]` | 55.0 | **Factible.** Flujo diagonal inverso (SO → NE) y menor tarifa. |
+| `escenario_estrecho.json` | `pasillo_estrecho` | Pasillo urbano estrecho | 12×12 | `(0,11) → (11,0)` | 4 (15.0) | 180.0 / 22.0 / 220.0 / 280.0 | 14 | LogiNorte (1.30 / 1.20) | 3 `[(6,7),(7,7),(8,7)]` | 70.0 | **Factible.** Recursos ajustados, cuello de botella y alta competencia. |
+| `escenario_bloqueado.json` | `bloqueado` | Escenario sin solución (demostración) | 12×12 | `(0,0) → (11,11)` | 3 (6.0) | 200.0 / 10.0 / 200.0 / 300.0 | 12 | BloqueoTotal (1.00 / 1.00) | 0 `[]` | 60.0 | **Infactible (Prueba negativa).** Barrera horizontal completa en fila 6. |
+
+#### Análisis técnico y particularidades por escenario
+
+1. **`escenario_predeterminado.json` (`id`: `logistica_12x12`)**
+   - **Nombre:** Red metropolitana base.
+   - **Dimensiones y Topología:** Cuadrícula de 12×12. Inicio $S = (0,0)$ (esquina superior izquierda), Destino $G = (11,11)$ (esquina inferior derecha).
+   - **Entregas (5):**
+     1. *Centro Norte* en `(2,9)` | Demanda: 5.0 | Tarifa: 60.0 | Prioridad: 1
+     2. *Zona Industrial* en `(5,4)` | Demanda: 4.0 | Tarifa: 60.0 | Prioridad: 1
+     3. *Puerto Este* en `(8,10)` | Demanda: 6.0 | Tarifa: 60.0 | Prioridad: 1
+     4. *Depósito Sur* en `(10,2)` | Demanda: 3.0 | Tarifa: 60.0 | Prioridad: 1
+     5. *Mercado Central* en `(4,7)` | Demanda: 4.0 | Tarifa: 60.0 | Prioridad: 1
+     - **Demanda acumulada total:** 22.0 unidades.
+   - **Recursos configurados:** Combustible: 250.0 unidades (1.0/paso), Capacidad: 30.0 unidades, Tiempo: 300.0 pasos (1.0/paso), Presupuesto: 400.0 unidades monetarias.
+   - **Obstáculos (13 celdas):** `(1,3), (2,3), (2,11), (3,3), (3,11), (4,3), (5,8), (5,9), (5,10), (7,6), (8,6), (9,6), (10,6)`.
+   - **Competidor (`TransLog`):** Factor costo = 1.25, Factor presupuesto = 1.15. Bloquea 3 celdas en el corredor central: `(7,8), (7,9), (8,8)`.
+   - **Restricciones de movimiento:** Diagonal no permitida (`permitir_diagonal = false`), factor diagonal = 1.414213562, profundidad adversaria = 4.
+   - **Propósito y particularidad:** Sirve como escenario base de referencia y benchmark estándar para el sistema. Es totalmente factible y posee un óptimo global de costo $37.8$ para el orden de entregas `[4, 2, 5, 1, 3]` ($E4 \rightarrow E2 \rightarrow E5 \rightarrow E1 \rightarrow E3$), verificado exhaustivamente sobre las $5! = 120$ permutaciones posibles.
+
+2. **`escenario_alternativo.json` (`id`: `corredor_costero`)**
+   - **Nombre:** Corredor costero alternativo.
+   - **Dimensiones y Topología:** Cuadrícula de 12×12. Inicio $S = (11,0)$ (esquina inferior izquierda), Destino $G = (0,11)$ (esquina superior derecha).
+   - **Entregas (4):**
+     1. *Terminal Pesquero* en `(9,3)` | Demanda: 4.0 | Tarifa: 55.0 | Prioridad: 1
+     2. *Plaza Mayor* en `(6,8)` | Demanda: 5.0 | Tarifa: 55.0 | Prioridad: 1
+     3. *Aduana Norte* en `(3,2)` | Demanda: 3.0 | Tarifa: 55.0 | Prioridad: 1
+     4. *Muelle viejo* en `(1,9)` | Demanda: 4.0 | Tarifa: 55.0 | Prioridad: 1
+     - **Demanda acumulada total:** 16.0 unidades.
+   - **Recursos configurados:** Combustible: 220.0, Capacidad: 25.0, Tiempo: 260.0, Presupuesto: 340.0.
+   - **Obstáculos (16 celdas):** `(2,3), (2,7), (2,8), (2,9), (2,10), (3,3), (4,3), (5,1), (5,2), (5,3), (7,4), (8,4), (8,9), (9,4), (9,9), (10,9)`.
+   - **Competidor (`RutaSur`):** Factor costo = 1.20, Factor presupuesto = 1.10. Bloquea 3 celdas: `(4,5), (4,6), (5,5)`.
+   - **Restricciones de movimiento:** Diagonal no permitida (`permitir_diagonal = false`), factor diagonal = 1.414213562, profundidad adversaria = 4.
+   - **Propósito y particularidad:** Prueba la flexibilidad de los algoritmos ante un flujo invertido (de Suroeste a Noreste) y un conjunto de 4 entregas con tarifa reducida ($55.0$). Evalúa cómo los planificadores sortean 16 obstáculos distribuidos en sectores muelles/costeros.
+
+3. **`escenario_estrecho.json` (`id`: `pasillo_estrecho`)**
+   - **Nombre:** Pasillo urbano estrecho.
+   - **Dimensiones y Topología:** Cuadrícula de 12×12. Inicio $S = (0,11)$ (esquina superior derecha), Destino $G = (11,0)$ (esquina inferior izquierda).
+   - **Entregas (4):**
+     1. *Farmacia Este* en `(2,8)` | Demanda: 3.0 | Tarifa: 70.0 | Prioridad: 1
+     2. *Taller Central* en `(5,5)` | Demanda: 4.0 | Tarifa: 70.0 | Prioridad: 1
+     3. *Bodega Oeste* en `(8,3)` | Demanda: 3.0 | Tarifa: 70.0 | Prioridad: 1
+     4. *Clínica Sur* en `(10,7)` | Demanda: 5.0 | Tarifa: 70.0 | Prioridad: 1
+     - **Demanda acumulada total:** 15.0 unidades.
+   - **Recursos configurados:** Combustible: 180.0, Capacidad: 22.0, Tiempo: 220.0, Presupuesto: 280.0.
+   - **Obstáculos (14 celdas):** `(2,4), (3,4), (4,4), (5,4), (5,6), (5,7), (5,8), (5,9), (5,10), (6,4), (9,1), (9,2), (9,3), (9,4)`.
+   - **Competidor (`LogiNorte`):** Factor costo = 1.30, Factor presupuesto = 1.20. Bloquea 3 celdas: `(6,7), (7,7), (8,7)`.
+   - **Restricciones de movimiento:** Diagonal no permitida (`permitir_diagonal = false`), factor diagonal = 1.414213562, profundidad adversaria = 4.
+   - **Propósito y particularidad:** Modelo de estrés con recursos muy ajustados (combustible 180, tiempo 220, presupuesto 280) y la mayor agresividad del competidor (`factor_costo = 1.30`). Los obstáculos forman un "pasillo urbano estrecho", obligando a los algoritmos a encontrar desvíos eficientes en espacios reducidos. Tarifa mayor ($70.0$).
+
+4. **`escenario_bloqueado.json` (`id`: `bloqueado`)**
+   - **Nombre:** Escenario sin solución (demostración).
+   - **Dimensiones y Topología:** Cuadrícula de 12×12. Inicio $S = (0,0)$, Destino $G = (11,11)$.
+   - **Entregas (3):**
+     1. *E1* en `(1,5)` | Demanda: 2.0 | Tarifa: 60.0 | Prioridad: 1
+     2. *E2* en `(5,5)` | Demanda: 2.0 | Tarifa: 60.0 | Prioridad: 1
+     3. *E3* en `(9,5)` | Demanda: 2.0 | Tarifa: 60.0 | Prioridad: 1
+     - **Demanda acumulada total:** 6.0 unidades.
+   - **Recursos configurados:** Combustible: 200.0, Capacidad: 10.0, Tiempo: 200.0, Presupuesto: 300.0.
+   - **Obstáculos (12 celdas):** Todas las 12 celdas de la fila 6 completas: `(6,0), (6,1), (6,2), (6,3), (6,4), (6,5), (6,6), (6,7), (6,8), (6,9), (6,10), (6,11)`.
+   - **Competidor (`BloqueoTotal`):** Factor costo = 1.00, Factor presupuesto = 1.00. Celdas bloqueadas: Ninguna (`[]`).
+   - **Restricciones de movimiento:** Diagonal no permitida (`permitir_diagonal = false`), factor diagonal = 1.414213562.
+   - **Propósito y particularidad:** Escenario de prueba negativa (infactible deliberado). La fila 6 dividida totalmente por obstáculos crea una barrera física infranqueable entre el sector norte ($S$, $E1$, $E2$) y el sector sur ($E3$, $G$). Sirve para verificar la capacidad del sistema para detectar y reportar inalcanzabilidad (`_puntos_inalcanzables`) sin lanzar excepciones no controladas ni quedar atrapado en ciclos infinitos.
 
 ### 2.6 Parámetros experimentales
 
